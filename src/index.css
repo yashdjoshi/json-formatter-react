@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* shadcn/ui CSS variables */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+
+    /* JSON Syntax Colors - Light */
+    --syntax-key: 222 47% 11%;
+    --syntax-string: 160 84% 39%;
+    --syntax-number: 262 83% 58%;
+    --syntax-boolean: 142 71% 45%;
+    --syntax-null: 0 0% 45%;
+    --syntax-bracket-1: 217 91% 60%;
+    --syntax-bracket-2: 271 81% 56%;
+    --syntax-bracket-3: 142 71% 45%;
+    --syntax-bracket-4: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    /* JSON Syntax Colors - Dark */
+    --syntax-key: 0 0% 98%;
+    --syntax-string: 160 84% 39%;
+    --syntax-number: 262 83% 58%;
+    --syntax-boolean: 142 71% 45%;
+    --syntax-null: 0 0% 63%;
+    --syntax-bracket-1: 217 91% 60%;
+    --syntax-bracket-2: 271 81% 56%;
+    --syntax-bracket-3: 142 71% 45%;
+    --syntax-bracket-4: 25 95% 53%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+/* JSON Syntax Highlighting Colors */
+@layer utilities {
+  .json-key {
+    color: hsl(var(--syntax-key));
+    font-weight: 600;
+  }
+
+  .json-string {
+    color: hsl(var(--syntax-string));
+  }
+
+  .json-number {
+    color: hsl(var(--syntax-number));
+    font-weight: 500;
+  }
+
+  .json-boolean {
+    color: hsl(var(--syntax-boolean));
+    font-weight: 600;
+  }
+
+  .json-null {
+    color: hsl(var(--syntax-null));
+    font-weight: 600;
+  }
+
+  .json-bracket-1 {
+    color: hsl(var(--syntax-bracket-1));
+    font-weight: 700;
+  }
+
+  .json-bracket-2 {
+    color: hsl(var(--syntax-bracket-2));
+    font-weight: 700;
+  }
+
+  .json-bracket-3 {
+    color: hsl(var(--syntax-bracket-3));
+    font-weight: 700;
+  }
+
+  .json-bracket-4 {
+    color: hsl(var(--syntax-bracket-4));
+    font-weight: 700;
+  }
+
+  .json-colon {
+    color: hsl(var(--foreground));
+    opacity: 0.5;
+  }
+
+  .json-comma {
+    color: hsl(var(--foreground));
+    opacity: 0.5;
+  }
+}

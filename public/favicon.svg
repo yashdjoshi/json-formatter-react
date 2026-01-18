@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .brackets { fill: #fafafa; }
+    }
+    @media (prefers-color-scheme: light) {
+      .brackets { fill: #18181b; }
+    }
+  </style>
+  <text class="brackets" x="50" y="70" font-size="60" font-family="monospace" text-anchor="middle" font-weight="600">{ }</text>
+</svg>
