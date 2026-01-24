@@ -4,13 +4,13 @@ import { Button } from '@/components/ui/button';
 import { useFormatterStore } from '@/stores/useFormatterStore';
 import { useScrollSync } from '@/hooks/useScrollSync';
 import { LineNumbers } from './LineNumbers';
-import { SyntaxHighlighter } from './SyntaxHighlighter';
+import { JsonTree } from './JsonNode';
 import { ScrollToTop } from '../layout/ScrollToTop';
 import { toast } from 'sonner';
 
 export function OutputPanel() {
-  const preRef = useRef<HTMLPreElement>(null);
-  const { outputValue } = useFormatterStore();
+  const preRef = useRef<HTMLDivElement>(null);
+  const { outputValue, indentSize } = useFormatterStore();
   const { scrollOffset, handleScroll } = useScrollSync();
 
   const outputLineCount = outputValue ? outputValue.split('\n').length : 0;
@@ -76,19 +76,19 @@ export function OutputPanel() {
         {/* Output Display */}
         <div className="overflow-hidden relative">
           <ScrollToTop targetRef={preRef} />
-          <pre
+          <div
             ref={preRef}
-            className="w-full h-full p-4 bg-transparent overflow-auto whitespace-pre"
+            className="w-full h-full p-4 bg-transparent overflow-auto"
             onScroll={(e) => handleScroll(e.currentTarget.scrollTop)}
           >
             {outputValue ? (
-              <SyntaxHighlighter code={outputValue} />
+              <JsonTree jsonString={outputValue} indentSize={indentSize} />
             ) : (
               <span className="text-muted-foreground text-sm">
                 Formatted JSON will appear here...
               </span>
             )}
-          </pre>
+          </div>
         </div>
       </div>
     </div>
